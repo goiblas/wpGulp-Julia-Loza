@@ -1,0 +1,21 @@
+/*
+Theme Name: Theme_Julia
+Author: Jesús Olazagoitia
+Author URI: https://github.com/goiblas
+Description: Theme of Julia Loza - Estudio de decoración & Diseño de interiores
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+// Mixins & Variables
+
+@import "utils/mixins";
+@import "utils/settings";
+
+// Normalize & Core worpress
+@import "utils/normalize"; 
+@import "utils/wpcore";
+@import "utils/layout";
+
+
