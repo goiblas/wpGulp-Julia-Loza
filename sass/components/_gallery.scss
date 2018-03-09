@@ -1,0 +1,156 @@
+// carousel
+
+.flickity-enabled {
+  position: relative;
+}
+
+.flickity-enabled:focus { outline: none; }
+.flickity-viewport {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+
+.flickity-slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+// draggable carousel
+.flickity-enabled.is-draggable {
+  -webkit-tap-highlight-color: transparent;
+          tap-highlight-color: transparent;
+          user-select: none;
+}
+
+.flickity-enabled.is-draggable .flickity-viewport {
+  cursor: move;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.flickity-enabled.is-draggable .flickity-viewport.is-pointer-down {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+// custom carousel
+.carousel-cell {
+    width: 50%;
+    transform: translateX(calc(-16.6vw + 0.4%));
+    @media (min-width: map-get($breakpoints, 's')) {
+        width: 40.4%;
+        transform: translateX(calc(-10vw + 0.8%));
+    }
+    @media (min-width: map-get($breakpoints, 'm')) {
+        width: calc(100% / 3);
+        transform: translateX(calc(-16.6vw + 0.4%));
+    }
+}
+
+.full-section-relative {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.carousel-nav {
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    right: 0;
+    width: 66%;
+    display: flex;
+    justify-content: center;
+    
+    @media (min-width: map-get($breakpoints, 's')) {
+        width: 40%;
+    }
+    @media (min-width: map-get($breakpoints, 'm')) {
+        width: 33.3%;
+    }
+}
+.carousel-nav button {
+    cursor: pointer;
+    width: 150px;
+    vertical-align: middle;
+    background-color:rgba(255, 255, 255, .25);
+    padding:1rem .5rem 1rem 0;
+    border: 0;
+    transition: background .2s;
+}
+.carousel-nav button:hover:not(:disabled) {
+    background-color:rgba(255, 255, 255, .3);
+}
+.carousel-nav button svg {
+    vertical-align: middle;
+    height: 2rem;
+    width: 1.25rem;
+}
+.carousel-nav button:focus {
+    outline: 0;
+}
+.carousel-nav button:disabled {
+    opacity: 0.5;
+}
+.carousel-nav button:last-child {
+    margin-left: 1px;
+}
+.carousel-cell img {
+    width: 100%;
+    height: auto;
+}
+
+
+// lightbox gallery
+
+.jl-gallery a { display: none }
+.jl-gallery {
+    width: 100%;
+    padding-top: 67%;
+    position: relative;
+}
+.jl-gallery a { display: none; }
+.jl-gallery a:first-child {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    background-color: $c-black;
+}
+
+.jl-gallery a:first-child img {
+    min-width: 101%;
+    min-height: 101%;
+    height: auto;
+    object-fit:cover;
+    transition: all  2s ease-in-out;
+}
+.jl-gallery a:first-child:hover img {
+    opacity: .95;
+    transform: scale(1.08);
+}
+
+// custom plugin gallery
+.lg-outer .lg-thumb-item {
+    border-radius: 0;
+    border: 1px solid rgba(255, 255, 255,0);
+    transition: all .5s;
+}
+.lg-outer .lg-thumb-item.active,
+.lg-outer .lg-thumb-item:hover {
+    border-color: $c-main;
+}
+.lg-outer .lg-thumb-outer,
+.lg-outer .lg-toogle-thumb {
+    background-color: rgba(255, 255, 255, .06);
+}
+.lg-progress-bar .lg-progress {
+    background-color: $c-main;
+}
+

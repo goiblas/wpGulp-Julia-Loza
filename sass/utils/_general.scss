@@ -1,0 +1,88 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+::selection {
+    background: $c-main;
+    color: #fff;
+    text-shadow: rgba($c-black, 0.8) 0 1px 1px;
+}
+
+body {
+    font: 300 1.125rem/1.5 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: $c-white;
+    background-color: $bg-main-dark;
+    margin: 0;
+}
+
+h2 {
+    font-family: 'Poiret One', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    font-size: 2.375rem;
+    line-height: 1.1;
+    margin: 0;
+    padding: 1.2rem 0; 
+    @media (min-width: map-get($breakpoints, 'l')) {
+        font-size: 3.25rem;
+    }
+    @media (min-width: map-get($breakpoints, 'xl')) {
+        font-size: 4.1875rem;
+    }
+}
+
+// lines
+.bglines {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    z-index:  map-get($z-index, 'lines');
+    pointer-events: none;
+    overflow: hidden;
+
+    &__item {
+        width: 100% / $filas;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+        
+        @media (min-width: map-get($breakpoints, 's')) {
+            width: 100% / $filas-s;
+        }
+        @media (min-width: map-get($breakpoints, 'm')) {
+            width: 100% / $filas-full;
+        }
+        &::before {
+            display: block;
+            content: '';
+            height: 100%;
+            width: 1px;
+            top: 0;
+            background-color:rgba($c-black, 0.11);
+            position: absolute;
+        }
+    }
+}
+
+
+.section-page {
+    min-height: 100vh;
+    &--header {}
+}
+
+.z-content {
+  position: relative;
+  z-index:  map-get($z-index, 'content');
+}
+
+.bg-light {
+    background-color: $bg-main;
+}

@@ -16,6 +16,15 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 // Normalize & Core worpress
 @import "utils/normalize"; 
 @import "utils/wpcore";
-@import "utils/layout";
+@import "utils/general"; 
+
+// Components
+@import "components/header";
+@import "components/about";
+@import "components/gallery";
+
+// animations
+@import "animations/entry";
+
 
 

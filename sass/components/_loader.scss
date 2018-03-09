@@ -1,4 +1,20 @@
-.loader {
-    width: 25px;
-    height: 25px;
+body {
+    overflow-y: hidden;
+}
+.logo-preload  {
+    margin: auto;
+    width: 150px;
+    height: 50px;
+    background-color: rgba(#fff, .2);
+}
+
+.preload-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #3c3c3c;
+    z-index: 999;
+    display: flex;
 }

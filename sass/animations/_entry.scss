@@ -1,0 +1,57 @@
+
+.anima-entry {
+    $size: calc(2.5vmin + 4px);
+
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::after,
+    &:before {
+       left: 0;
+       background-color:  $bg-main-dark;
+       content: "";
+       position: absolute;
+        transition-duration: .6s;
+        transition-timing-function: ease-in-out;
+    }
+
+    &::after {
+        top: 0;
+        height: 0%;
+        width: calc(#{$size} + 1px);
+        box-shadow: $bg-main-dark calc(100vw - #{$size}) 100vh;
+        transition-property: box-shadow, height;
+
+       .run-initial & {
+            height: 100%;
+            box-shadow: $bg-main-dark calc(100vw - #{$size}) 0; 
+       }
+    }
+
+    &::before {
+        bottom: 0;
+        height: calc(#{$size} + 1px);
+        width: 0%;
+        box-shadow:$bg-main-dark 100vw calc(-100vh + #{$size});
+        transition-property: box-shadow, width;
+
+        .run-initial & {
+            width: 100%;
+            box-shadow: $bg-main-dark 0 calc(-100vh + #{$size});
+        }
+    }
+}
+
+
+// animation logo preload
+.logo-preload  {
+    transition: all .5s ease-out;
+}
+.run-initial .logo-preload {
+    transform: translateY(-50%);
+    opacity: 0;
+}

@@ -5,6 +5,8 @@ import browserSync from 'browser-sync';
 import plumber from 'gulp-plumber';
 import imagemin from 'gulp-imagemin';
 import cssnano from 'gulp-cssnano';
+import webp from 'gulp-webp';
+import gcmq from 'gulp-group-css-media-queries';
 
 const AUTOPREFIXER_BROWSERS = [
     'last 2 version',
@@ -33,6 +35,7 @@ gulp.task('mincss', () => {
         .pipe(plumber())
         .pipe(sass())
         .pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
+        .pipe(gcmq())
         .pipe(cssnano())
         .pipe(gulp.dest('./'));
 });
@@ -46,21 +49,26 @@ gulp.task('img', () => {
             interlaced: true,
             svgoPlugins: [{ removeViewBox: false }]
         }))
-        .pipe(gulp.dest('./img'))
+        .pipe(gulp.dest('./img'));
 });
+
+gulp.task('webp', () => {
+    return gulp.src('./img/raw/**/*.jpg')
+        .pipe(webp())
+        .pipe(gulp.dest('./img'));
+});
+
 
 gulp.task('dev', () => {
     browserSync.init({
-        proxy: "localhost/julia",
-        online: true
+        proxy: "localhost/julia"
     });
 
     gulp.watch('./sass/**/*.scss', ['css']).on('change', browserSync.reload) ;
-    gulp.watch('./img/raw/**/*.{png,jpg,gif,svg}', ['img']).on('change', browserSync.reload) ;
-    gulp.watch('*.php').on('change', browserSync.reload);
+    gulp.watch('./**/*.php').on('change', browserSync.reload);
     gulp.watch('./js/**/*.js').on('change', browserSync.reload);
 });
 
 
-gulp.task('default', ['img','css','dev']);
-gulp.task('build', ['img','mincss']);
+gulp.task('default', ['img','webp','css','dev']);
+gulp.task('build', ['img', 'webp','mincss']);

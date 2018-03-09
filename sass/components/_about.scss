@@ -1,0 +1,77 @@
+.about {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: auto;
+    justify-content: center;
+
+
+    @media (min-width: map-get($breakpoints, 'l')) {
+        max-width: 92%;
+    }
+    @media (min-width: map-get($breakpoints, 'xl')) {
+        max-width: 66.666666%;
+    }
+
+    &__content {
+        font-size: 1rem;
+        padding:0 $pad-small;
+    }
+    &__image {
+        padding: 10vh 0 2vh;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    @media (min-width: map-get($breakpoints, 's')) {
+        &__wrap { display: flex; }
+        &__content { width: 50%; }
+        &__image { 
+            padding: 0;
+            width: 50%;
+            order: 1;
+        }
+    }
+
+
+
+    &__lighted {
+        padding-top: 1.5rem;
+        font-size: 1.1875rem;
+
+        &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 100%;
+            right: 0;
+            height: 100vh;
+            left: 0;
+            background-color: $bg-main;
+            transform: skewY(-2.5deg) translateY(-1rem);
+            z-index: map-get($z-index,'bg');
+
+            @media (min-width: map-get($breakpoints, 'xl')) {
+                transform: skewY(-3deg) translateY(-1rem);
+            }
+        }
+    }
+
+     
+    &__mark {
+        text-align: right;
+
+        img {
+            opacity: .8;
+            width: 118px;
+            height: auto;
+            max-width: 50vw;
+        }
+    }
+
+    @media (min-width: map-get($breakpoints, 's')) {
+        display: flex;
+    }
+}

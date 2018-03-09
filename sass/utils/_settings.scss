@@ -1,3 +1,51 @@
 // colors 
 $c-primary: #4A148C;
-$c-main: #4A148C;
+$c-main: #b2a495;
+
+
+$bg-main: #2a2a2a;
+$bg-main-dark: #232323;
+
+$c-white: #ffffff;
+$c-black: #000000;
+$c-text: #232323;
+$c-main: rgba(187, 148, 39, 0.68);
+$c-main-dark: rgba(161, 122, 15, 0.8);
+$c-main-light: rgba(202, 161, 49, 0.4);
+$c-input: rgba(212, 212, 212, 0.28);
+
+
+// width
+$max-width: 1400px;
+
+// paddings
+$pad-small: 22px;
+$pad-medium: 44px;
+
+// Fonts
+$fa-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$fa-secondary: 'Poiret One', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+//breakpoints
+$breakpoints: (
+    'xs': 370px,
+    's': 767px,
+    'm': 970px,
+    'l':  1100px,
+    'xl':  1400px
+  ) !default;
+
+
+$z-index: (
+    'bg': -1,
+    'lines': 2,
+    'content': 3
+  )!default;
+
+
+
+// lines for breakpoints
+$filas: 3;
+$filas-s: 5;
+$filas-full: 6;
+

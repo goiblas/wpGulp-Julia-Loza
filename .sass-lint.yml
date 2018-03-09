@@ -9,7 +9,7 @@
 # Linter SpaceBeforeBrace, option "allow_single_line_padding"
 
 files:
-  include: './scss/**/*.s+(a|c)ss'
+  include: 'scss/**/*.s+(a|c)ss'
 options:
   formatter: stylish
   merge-default-rules: false

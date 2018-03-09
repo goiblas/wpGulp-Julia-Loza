@@ -1,0 +1,341 @@
+// top
+.main-header {
+    padding-top: 6vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    a {
+        text-decoration: none;
+        color: $c-black;
+    }
+
+    &__row {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    &__fb {
+        width: 33vw;
+        text-align: center;
+        @media (min-width: map-get($breakpoints, 's')) {
+            width: 20vw;
+        }
+        @media (min-width: map-get($breakpoints, 'm')) {
+            width: 9.6vw;
+            margin-right: 4vw;
+        }
+        svg {
+            margin: auto;
+            width: 24px;
+        }
+    }
+
+    &__contact {
+        text-align: center;
+        font-size: 0.69em;
+        padding: $pad-small 0;
+
+        .item-contact {
+            margin: 0 .3rem;
+            @media (min-width: map-get($breakpoints, 's')) {
+                margin: 0 1rem;
+            }
+            @media (min-width: map-get($breakpoints, 'm')) {
+                margin: 0 1.5rem;
+            }
+        }
+    }
+}
+
+.cover-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    @media (min-width: map-get($breakpoints, 's')) {
+        box-shadow: inset $bg-main-dark 0 0 0 calc(2.5vmin + 4px);
+    }
+
+    &__title {
+        position: absolute;
+        top: 15vh;
+        left: 0;
+        width: 100%;
+        padding: 50px;
+        text-align: center;
+
+        @media (min-width: map-get($breakpoints, 'l')) {
+           width: 50%;
+        }
+        @media (min-width: map-get($breakpoints, 'xl')) {
+           width: 33.3%;
+        }
+
+        svg {
+            width: 60%;
+            max-width: 300px;
+            margin: auto;
+
+            @media (min-width: map-get($breakpoints, 'xl')) {
+                max-width: 100%;
+                width: 72%;
+            }
+        }
+
+        .logo {
+            fill:$c-black;
+        }
+        h1 , h2 {
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 { 
+            font-family: $fa-main;
+            font-size: 0.69rem;
+            letter-spacing: -0.03rem;
+            color: $c-black;
+            font-weight: 300;
+
+            @media (min-width: map-get($breakpoints, 'xs')) {
+                font-size: 0.87rem;
+            }
+            @media (min-width: map-get($breakpoints, 's')) {
+                letter-spacing: 0.01rem;
+                font-size: 1rem;
+            }
+            @media (min-width: map-get($breakpoints, 'm')) {
+                letter-spacing: 0.035rem;
+                font-size: 1.18rem;
+            }
+        }
+
+        .sep-subtitle { 
+            margin: 0 .3rem;
+            @media (min-width: map-get($breakpoints, 's')) {
+                margin: 0 .56rem;
+            }
+        }
+    }
+}
+
+.headline {
+    background-color: rgba($bg-main-dark, 0.98);
+    color: $c-white;
+    padding: $pad-small;
+    position: absolute;
+    bottom: 0;
+    padding: 8vw;
+    right: 0;
+    width: 83.4%;
+
+    @media (min-width: map-get($breakpoints, 's')) {
+        bottom: 10vh;
+        display: flex;
+        align-items: flex-end;
+        padding: 2rem 3.5rem;
+    }
+    @media (min-width: map-get($breakpoints, 'l')) {
+        width: 66.6%;
+    }
+    @media (min-width: map-get($breakpoints, 'xl')) {
+        padding: 2rem 4rem;
+        width: 50%;
+    }
+
+    &__content {
+        font-size: .92rem;
+        font-weight: 300;
+
+        @media (min-width: map-get($breakpoints, 's')) {
+            font-size: 1.12rem;
+            width: 60%;
+        }
+    }
+
+
+    &__title {
+        font-family: $fa-secondary;
+        line-height: 1.07;
+        font-size: 2.175rem;
+        
+        @media (min-width: map-get($breakpoints, 's')) {
+            text-align: center;
+            font-size: 3.375rem;
+            order: 1;
+            width: 40%;
+
+            .word-2 {
+                margin-left:2ch;
+                display: block;
+            }
+        }
+    }
+}
+
+// slide
+$t: 15s;
+
+.main-slider {
+    $parent: &;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    z-index: map-get($z-index, 'bg');
+
+    @media (min-width: map-get($breakpoints, 'm')) {
+        flex-wrap: nowrap;
+    }
+
+    &__img-1, 
+    &__img-2,
+    &__img-3 {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-size: auto 100vh;
+        background-repeat: no-repeat;
+
+        @media (min-width: map-get($breakpoints, 'm')) {
+            background-size: 100vw auto;
+        }
+    }
+    &__img-1 {
+        background-image: url('img/slide-1.webp'),
+                          url('img/slide-1.jpg');
+        animation: move-image-1 $t alternate infinite;
+    }
+    &__img-2 {
+        background-image: url('../img/sli-hor-2.webp'),
+                          url('../img/sli-hor-2.jpg');
+        animation: move-image-2 $t alternate infinite;
+        transform: translateX(-100%);
+    }
+    &__img-3 {
+        background-image: url('../img/sli-hor-3.webp'),
+                          url('../img/sli-hor-3.jpg');
+        animation: move-image-3 $t alternate infinite;
+        transform: translateX(-100%);
+    }
+
+    &__fila {
+        width: 100% / $filas;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+        @media (min-width: map-get($breakpoints, 's')) {
+            width: 100% / $filas-s;
+        }
+        @media (min-width: map-get($breakpoints, 'm')) {
+            width: 100% / $filas-full;
+        }
+
+        @for $i from 1 to $filas-full + 1 {
+            &:nth-child(#{$i}) #{$parent}__img {
+                background-position: ($i - 1) * -(100vw / $filas) center; 
+
+                @media (min-width: map-get($breakpoints, 's')) {
+                    background-position: ($i - 1) * -(100vw / $filas-s) center; 
+                }
+                @media (min-width: map-get($breakpoints, 'm')) {
+                    background-position: ($i - 1) * -(100vw / $filas-full) center; 
+                }
+            }
+
+            &:nth-child(#{$i}) #{$parent}__img-1 {
+                animation-delay: $i * 0.1s;
+            }
+            &:nth-child(#{$i}) #{$parent}__img-2 {
+                animation-delay: $i * 0.1s;
+            }
+            &:nth-child(#{$i}) #{$parent}__img-3 {
+                animation-delay: $i * 0.1s;
+            }
+        }
+    }
+}
+
+
+@keyframes move-image-1 {
+    0%, 33%  {
+        transform: translateX(0);
+    }
+    36%, 100% {
+        transform: translateX(100%);
+    }
+
+}
+@keyframes move-image-2 {
+    0%, 33% {
+        transform: translateX(-100%);
+    }
+    36%, 100% {
+        transform: translateX(0);
+    }
+}
+@keyframes move-image-3 {
+    0%, 66% {
+        transform: translateX(-100%);
+    }
+    72%, 100% {
+        transform: translateX(0);
+    }
+}
+
+.animationCheck:checked + .cover-page__content + .main-slider * {
+    animation-play-state: paused;
+}
+.animationCheck:checked + .cover-page__content 
++ .main-slider + .main-slider__check-bar .iCheck-bar img {
+    transform: translateY(0);
+}
+.animationCheck:checked +  .cover-page__content * {
+    animation-play-state: paused;    
+}
+
+
+.animationCheck {
+    position: absolute;
+    top: -10em;
+}
+
+.main-slider__check-bar {
+    position: absolute;
+    bottom: 0;
+    left: $pad-small;
+    height: 30vh;
+    border-left: 1px solid $c-black;
+    @media (min-width: map-get($breakpoints, 's')) {
+        left: ((100vw / $filas-s) / 2 - 3) ;
+    }
+
+    label {
+        display: block;
+        cursor: pointer;
+        padding: 22px 16px;
+    }
+
+    .iCheck-bar {
+        width: 12px;
+        height: 22px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: auto;
+            transition: transform .5s;
+            transform: translateY(-22px);
+        }
+    }
+}
