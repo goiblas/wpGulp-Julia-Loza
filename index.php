@@ -1,8 +1,14 @@
 <?php
 get_header(); ?>
 
+<?php // preload ?>
+
 <div id="preloader" class="anima-entry preload-wrap">
-	<div class="logo-preload">loading</div>
+   <div class="logo-preload">
+		<video autoplay="autoplay" loop>
+			<source src="<?php echo get_template_directory_uri(); ?>/img/loading-julia.mp4" type="video/mp4" />
+		</video>
+    </div>
 </div>
 
 <div class="bglines">
@@ -15,6 +21,7 @@ get_header(); ?>
 </div>
 
 <?php 
+
 
 	// header slider
 	get_template_part( 'content', 'header');
@@ -29,40 +36,12 @@ get_header(); ?>
 	// Porfolio
 	get_template_part('content', 'gallery');
 
+	// Formulario de contacto
+	$the_query = new WP_Query( 'page_id=6' ); 
+	while ($the_query -> have_posts()) : $the_query -> the_post(); 
 
+		get_template_part( 'content', 'contact' );
 
-// contact
-?>
-<div class="section-page section-page--contact bg-light">
-	Contacto
-</div>
-
-
-
-
-
-<?php
-// get posts
-	if ( have_posts() ) :
-		while ( have_posts() ) : the_post();
-?>
-	<div class="entry-content">
-			<?php the_content(); ?>
-		</div>
-		<?php
-
-		endwhile;
-	endif;
-?>
-
-
-<?php $the_query = new WP_Query( 'page_id=6' ); 
-// Formulario de contacto
- while ($the_query -> have_posts()) : $the_query -> the_post(); 
-    the_content();
-    endwhile;
+	endwhile;
 	
-?>
-
-
-<?php //get_footer(); ?>
+ //get_footer(); ?>

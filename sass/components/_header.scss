@@ -35,7 +35,7 @@
 
     &__contact {
         text-align: center;
-        font-size: 0.69em;
+        font-size: 0.8em;
         padding: $pad-small 0;
 
         .item-contact {
@@ -217,14 +217,14 @@ $t: 15s;
         animation: move-image-1 $t alternate infinite;
     }
     &__img-2 {
-        background-image: url('../img/sli-hor-2.webp'),
-                          url('../img/sli-hor-2.jpg');
+        background-image: url('img/slide-2.webp'),
+                          url('img/slide-2.jpg');
         animation: move-image-2 $t alternate infinite;
         transform: translateX(-100%);
     }
     &__img-3 {
-        background-image: url('../img/sli-hor-3.webp'),
-                          url('../img/sli-hor-3.jpg');
+        background-image: url('img/slide-3.webp'),
+                          url('img/slide-3.jpg');
         animation: move-image-3 $t alternate infinite;
         transform: translateX(-100%);
     }
@@ -234,6 +234,17 @@ $t: 15s;
         height: 100vh;
         overflow: hidden;
         position: relative;
+
+        &::after {
+            display: block;
+            content: "";
+            height: 100%;
+            left: 0;
+            top: 0;
+            position: absolute;
+            background: $bg-main-dark;
+            width: 1px;
+        }
         @media (min-width: map-get($breakpoints, 's')) {
             width: 100% / $filas-s;
         }
@@ -267,6 +278,84 @@ $t: 15s;
 }
 
 
+
+// circle animation
+.animationCheck:checked + .wrap_header_animation * {
+    animation-play-state: paused;
+}
+.animationCheck:checked + .wrap_header_animation .i-pause {
+   display: none;
+}
+.animationCheck:checked + .wrap_header_animation .i-play {
+   display: block;
+}
+
+.animationCheck {
+    position: absolute;
+    top: -10em;
+}
+
+.main-slider__check-bar {
+    display: none;
+    
+    @media (min-width: map-get($breakpoints, 's')) {
+    display: block;
+    position: absolute;
+    bottom: 6vh;
+    left: 8vw;
+
+        label {
+            display: block;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .circle-bar svg {
+            width: 47px;
+            height: 47px;
+            transform: rotate(-90deg);
+            background: transparent;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+
+        .shadow {
+            stroke: rgba($c-white, 0.24);
+            fill: transparent;
+            stroke-width: 6;
+        }
+        .circle {
+            fill: transparent;
+            stroke: $c-white;
+            stroke-width: 6;
+            stroke-dasharray: 0, 100;
+            animation: fillup ($t / 3) ease-in-out infinite;
+        }
+    }
+    @media (min-width: map-get($breakpoints, 'm')) {
+        left: 11vw;
+        transform: translateX(-100%);
+    }
+}
+
+.stateAnimation {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    svg {
+        margin: auto;
+    }
+    .i-play {
+        display: none;
+        transform: translate(3px,1px);
+    }    
+}
+
+
+// animations
 @keyframes move-image-1 {
     0%, 33%  {
         transform: translateX(0);
@@ -293,49 +382,15 @@ $t: 15s;
     }
 }
 
-.animationCheck:checked + .cover-page__content + .main-slider * {
-    animation-play-state: paused;
-}
-.animationCheck:checked + .cover-page__content 
-+ .main-slider + .main-slider__check-bar .iCheck-bar img {
-    transform: translateY(0);
-}
-.animationCheck:checked +  .cover-page__content * {
-    animation-play-state: paused;    
-}
-
-
-.animationCheck {
-    position: absolute;
-    top: -10em;
-}
-
-.main-slider__check-bar {
-    position: absolute;
-    bottom: 0;
-    left: $pad-small;
-    height: 30vh;
-    border-left: 1px solid $c-black;
-    @media (min-width: map-get($breakpoints, 's')) {
-        left: ((100vw / $filas-s) / 2 - 3) ;
+@keyframes fillup {
+    0% {
+        stroke-dasharray: 0, 100;
     }
-
-    label {
-        display: block;
-        cursor: pointer;
-        padding: 22px 16px;
+    82% {
+        opacity: 1;
     }
-
-    .iCheck-bar {
-        width: 12px;
-        height: 22px;
-        overflow: hidden;
-
-        img {
-            width: 100%;
-            height: auto;
-            transition: transform .5s;
-            transform: translateY(-22px);
-        }
+    100% {
+        opacity: 0;
+        stroke-dasharray: 101, 100;
     }
 }

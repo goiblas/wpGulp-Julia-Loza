@@ -24,13 +24,13 @@
           user-select: none;
 }
 
-.flickity-enabled.is-draggable .flickity-viewport {
+.flickity-enabled.is-draggable .flickity-viewport a {
   cursor: move;
   cursor: -webkit-grab;
   cursor: grab;
 }
 
-.flickity-enabled.is-draggable .flickity-viewport.is-pointer-down {
+.flickity-enabled.is-draggable .flickity-viewport.is-pointer-down a {
   cursor: -webkit-grabbing;
   cursor: grabbing;
 }
@@ -109,8 +109,11 @@
 .jl-gallery a { display: none }
 .jl-gallery {
     width: 100%;
-    padding-top: 67%;
     position: relative;
+    padding-top: 150%;
+    @media (min-width: map-get($breakpoints, 's')) {
+        padding-top: 67%;
+    }
 }
 .jl-gallery a { display: none; }
 .jl-gallery a:first-child {
@@ -152,5 +155,47 @@
 }
 .lg-progress-bar .lg-progress {
     background-color: $c-main;
+}
+
+.flickity-viewport {
+    padding-bottom: 7rem;
+    box-sizing: content-box;
+}
+.jl-gallery {
+    &__title {
+        cursor: pointer;
+        text-align: center;
+        padding: 2rem 0;
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        top: 100%;
+
+        h3 {
+            font-family: $fa-secondary;
+            font-weight: 400;
+            font-size: 1.375rem;
+            line-height: 1.2;
+            margin: 0;
+            padding: 0; 
+            letter-spacing: .25rem;
+            text-transform: uppercase;
+            @media (min-width: map-get($breakpoints, 'l')) {
+                font-size: 1.15rem;
+            }
+            @media (min-width: map-get($breakpoints, 'xl')) {
+                letter-spacing: .5rem;
+                font-size: 1.375rem;
+            }
+        }
+    }
+
+    &__show {
+        color: $c-main;
+        font-size: .82rem;
+        font-weight: 400;
+        font-family: $fa-main;
+        margin-top: .3rem;
+    }
 }
 

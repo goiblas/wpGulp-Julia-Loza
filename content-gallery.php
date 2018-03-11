@@ -1,10 +1,10 @@
-<div class="section-page section-page--gallery bg-light">
+<section class="section-page section-page--gallery bg-light">
 
         <div class="full-section-relative z-content">
             <div class="carousel-wrap jl-gallery__wrap">
                 <div class="carousel-cell">
 
-                        <div class="jl-gallery">
+                        <div class="jl-gallery wow fadeInRight" data-wow-delay="0.3s">
                             <a class="" href="<?php echo get_template_directory_uri() ?>/img/dev/demo.jpg" data-sub-html="Titulo de la imagen">
                                <img class="img-responsive" src="<?php echo get_template_directory_uri() ?>/img/dev/demo.jpg">
                             </a>
@@ -14,12 +14,19 @@
                             <a class="" href="<?php echo get_template_directory_uri() ?>/img/dev/demo.jpg" data-sub-html="Titulo de la imagen">
                                 <img class="img-responsive" src="<?php echo get_template_directory_uri() ?>/img/dev/proyecto3-thumbnail.jpg">
                             </a>
+
+                            <div class="jl-gallery__title">
+                                <h3>Hogar</h3>
+                                <div class="jl-gallery__show">
+                                    ver galeria 
+                                </div>
+                            </div>
                         </div>
 
                 </div>
                 <div class="carousel-cell">
 
-                        <div class="jl-gallery">
+                        <div class="jl-gallery wow fadeInRight" data-wow-delay="0.5s">
                             <a class="" href="<?php echo get_template_directory_uri() ?>/img/dev/demo-h.jpg" data-sub-html="Titulo de la imagen">
                                     <img class="img-responsive" src="<?php echo get_template_directory_uri() ?>/img/dev/demo-h.jpg">
                             </a>
@@ -29,12 +36,18 @@
                             <a class="" href="<?php echo get_template_directory_uri() ?>/img/dev/demo.jpg" data-sub-html="Titulo de la imagen">
                                 <img class="img-responsive" src="<?php echo get_template_directory_uri() ?>/img/dev/proyecto3-thumbnail.jpg">
                             </a>
+                            <div class="jl-gallery__title">
+                                <h3>Exteriores</h3>
+                                <div class="jl-gallery__show">
+                                    ver galeria 
+                                </div>
+                            </div>
                         </div>
 
                 </div>
                 <div class="carousel-cell">
 
-                        <div class="jl-gallery">
+                        <div class="jl-gallery wow fadeInRight" data-wow-delay="0.7s">
                             <a class="" href="<?php echo get_template_directory_uri() ?>/img/dev/demo-h.jpg" data-sub-html="Titulo de la imagen">
                                     <img class="img-responsive" src="<?php echo get_template_directory_uri() ?>/img/dev/demo-v.jpg">
                             </a>
@@ -44,6 +57,12 @@
                             <a class="" href="<?php echo get_template_directory_uri() ?>/img/dev/demo.jpg" data-sub-html="Titulo de la imagen">
                                 <img class="img-responsive" src="<?php echo get_template_directory_uri() ?>/img/dev/proyecto3-thumbnail.jpg">
                             </a>
+                            <div class="jl-gallery__title">
+                                <h3>Bodegas y Hosteleria</h3>
+                                <div class="jl-gallery__show">
+                                    ver galeria 
+                                </div>
+                            </div>
                         </div>
 
                 </div>
@@ -141,4 +160,4 @@
 
         </div>
 
-</div>
+</section>

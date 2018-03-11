@@ -22,16 +22,16 @@
 <div class="section-page section-page--about">
     <section class="about">
         <div class="about__wrap">
-            <div class="about__image z-content">
+            <div class="about__image z-content wow fadeInDown" data-wow-delay="0.1s">
                 <?php echo get_first_image_post($post->ID); ?>
             </div>
             <div class="about__content">
-                <div class="z-content">
+                <div class="z-content wow fadeInUp" data-wow-delay="0.1s">
                     <?php echo the_title('<h2>', '</h2>' ); ?>
                     <?php echo $content ?>
                 </div>
                 <div class="about__lighted">
-                    <div class="z-content">
+                    <div class="z-content  wow fadeInUp" data-wow-delay="0.3s">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus necessitatibus</p>
                         <div class="about__mark">
                             <img src="<?php echo get_template_directory_uri() ?>/img/colegiada_LR_065.svg" alt="Colegiada LR 065">
