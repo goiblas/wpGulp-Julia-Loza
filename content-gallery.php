@@ -1,136 +1,55 @@
+
+
 <section class="section-page section-page--gallery bg-light">
 
         <div class="full-section-relative z-content">
             <div class="carousel-wrap jl-gallery__wrap">
-                <div class="carousel-cell">
 
-                        <div class="jl-gallery wow fadeInRight" data-wow-delay="0.3s">
-                            <a class="" href="<?php echo get_template_directory_uri() ?>/img/dev/demo.jpg" data-sub-html="Titulo de la imagen">
-                               <img class="img-responsive" src="<?php echo get_template_directory_uri() ?>/img/dev/demo.jpg">
-                            </a>
-                            <a class="" href="<?php echo get_template_directory_uri() ?>/img/dev/demo.jpg" data-sub-html="Titulo de la imagen">
-                                <img class="img-responsive" src="<?php echo get_template_directory_uri() ?>/img/dev/proyecto2-thumbnail.jpg">
-                            </a>
-                            <a class="" href="<?php echo get_template_directory_uri() ?>/img/dev/demo.jpg" data-sub-html="Titulo de la imagen">
-                                <img class="img-responsive" src="<?php echo get_template_directory_uri() ?>/img/dev/proyecto3-thumbnail.jpg">
-                            </a>
+<?php
+    $args = array('post_type' => 'trabajos');
+	$the_query = new WP_Query($args); 
+    $counter = 0; 
+	while ($the_query -> have_posts()) : $the_query -> the_post(); 
 
-                            <div class="jl-gallery__title">
-                                <h3>Hogar</h3>
-                                <div class="jl-gallery__show">
-                                    ver galeria 
-                                </div>
-                            </div>
-                        </div>
+        $attachments = get_posts( array(
+            'post_type'   => 'attachment',
+            'numberposts' => -1,
+            'post_parent' => $post->ID
+        ) );
+         
+        if ( $attachments ) {
+        $counter++;
+        ?>
+        <div class="carousel-cell">
+                <?php if ( $counter < 4) { ?>
+                    <div class="jl-gallery wow fadeInRight" data-wow-delay="0.3s">
+                <?php } else { ?>
+                    <div class="jl-gallery">
+                <?php } ?>
+        <?php 
+            foreach ( $attachments as $attachment ) { 
+        ?>
+            <a class="" href="<?php echo wp_get_attachment_url($attachment->ID, 'full') ?>" data-sub-html="<?php echo apply_filters( 'the_title', $attachment->post_title ); ?>">
+                <img class="img-responsive" src="<?php echo wp_get_attachment_image_src($attachment->ID, 'medium')[0];?>"  srcset="<?php echo wp_get_attachment_image_srcset( $attachment->ID); ?>">
+            </a>
 
-                </div>
-                <div class="carousel-cell">
-
-                        <div class="jl-gallery wow fadeInRight" data-wow-delay="0.5s">
-                            <a class="" href="<?php echo get_template_directory_uri() ?>/img/dev/demo-h.jpg" data-sub-html="Titulo de la imagen">
-                                    <img class="img-responsive" src="<?php echo get_template_directory_uri() ?>/img/dev/demo-h.jpg">
-                            </a>
-                            <a class="" href="<?php echo get_template_directory_uri() ?>/img/dev/demo.jpg" data-sub-html="Titulo de la imagen">
-                                <img class="img-responsive" src="<?php echo get_template_directory_uri() ?>/img/dev/proyecto2-thumbnail.jpg">
-                            </a>
-                            <a class="" href="<?php echo get_template_directory_uri() ?>/img/dev/demo.jpg" data-sub-html="Titulo de la imagen">
-                                <img class="img-responsive" src="<?php echo get_template_directory_uri() ?>/img/dev/proyecto3-thumbnail.jpg">
-                            </a>
-                            <div class="jl-gallery__title">
-                                <h3>Exteriores</h3>
-                                <div class="jl-gallery__show">
-                                    ver galeria 
-                                </div>
-                            </div>
-                        </div>
-
-                </div>
-                <div class="carousel-cell">
-
-                        <div class="jl-gallery wow fadeInRight" data-wow-delay="0.7s">
-                            <a class="" href="<?php echo get_template_directory_uri() ?>/img/dev/demo-h.jpg" data-sub-html="Titulo de la imagen">
-                                    <img class="img-responsive" src="<?php echo get_template_directory_uri() ?>/img/dev/demo-v.jpg">
-                            </a>
-                            <a class="" href="<?php echo get_template_directory_uri() ?>/img/dev/demo.jpg" data-sub-html="Titulo de la imagen">
-                                <img class="img-responsive" src="<?php echo get_template_directory_uri() ?>/img/dev/proyecto2-thumbnail.jpg">
-                            </a>
-                            <a class="" href="<?php echo get_template_directory_uri() ?>/img/dev/demo.jpg" data-sub-html="Titulo de la imagen">
-                                <img class="img-responsive" src="<?php echo get_template_directory_uri() ?>/img/dev/proyecto3-thumbnail.jpg">
-                            </a>
-                            <div class="jl-gallery__title">
-                                <h3>Bodegas y Hosteleria</h3>
-                                <div class="jl-gallery__show">
-                                    ver galeria 
-                                </div>
-                            </div>
-                        </div>
-
-                </div>
-                
-               <div class="carousel-cell">
-
-                        <div class="jl-gallery">
-                            <a class="" href="<?php echo get_template_directory_uri() ?>/img/dev/demo.jpg" data-sub-html="Titulo de la imagen">
-                                    <img class="img-responsive" src="<?php echo get_template_directory_uri() ?>/img/dev/demo.jpg">
-                            </a>
-                            <a class="" href="<?php echo get_template_directory_uri() ?>/img/dev/demo.jpg" data-sub-html="Titulo de la imagen">
-                                <img class="img-responsive" src="<?php echo get_template_directory_uri() ?>/img/dev/proyecto2-thumbnail.jpg">
-                            </a>
-                            <a class="" href="<?php echo get_template_directory_uri() ?>/img/dev/demo.jpg" data-sub-html="Titulo de la imagen">
-                                <img class="img-responsive" src="<?php echo get_template_directory_uri() ?>/img/dev/proyecto3-thumbnail.jpg">
-                            </a>
-                        </div>
-
-                </div>
-                
-               <div class="carousel-cell">
-
-                        <div class="jl-gallery">
-                            <a class="" href="<?php echo get_template_directory_uri() ?>/img/dev/demo.jpg" data-sub-html="Titulo de la imagen">
-                                    <img class="img-responsive" src="<?php echo get_template_directory_uri() ?>/img/dev/demo.jpg">
-                            </a>
-                            <a class="" href="<?php echo get_template_directory_uri() ?>/img/dev/demo.jpg" data-sub-html="Titulo de la imagen">
-                                <img class="img-responsive" src="<?php echo get_template_directory_uri() ?>/img/dev/proyecto2-thumbnail.jpg">
-                            </a>
-                            <a class="" href="<?php echo get_template_directory_uri() ?>/img/dev/demo.jpg" data-sub-html="Titulo de la imagen">
-                                <img class="img-responsive" src="<?php echo get_template_directory_uri() ?>/img/dev/proyecto3-thumbnail.jpg">
-                            </a>
-                        </div>
-
-                </div>
-                
-               <div class="carousel-cell">
-
-                        <div class="jl-gallery">
-                            <a class="" href="<?php echo get_template_directory_uri() ?>/img/dev/demo.jpg" data-sub-html="Titulo de la imagen">
-                                    <img class="img-responsive" src="<?php echo get_template_directory_uri() ?>/img/dev/demo.jpg">
-                            </a>
-                            <a class="" href="<?php echo get_template_directory_uri() ?>/img/dev/demo.jpg" data-sub-html="Titulo de la imagen">
-                                <img class="img-responsive" src="<?php echo get_template_directory_uri() ?>/img/dev/proyecto2-thumbnail.jpg">
-                            </a>
-                            <a class="" href="<?php echo get_template_directory_uri() ?>/img/dev/demo.jpg" data-sub-html="Titulo de la imagen">
-                                <img class="img-responsive" src="<?php echo get_template_directory_uri() ?>/img/dev/proyecto3-thumbnail.jpg">
-                            </a>
-                        </div>
-
-                </div>
-                
-               <div class="carousel-cell">
-
-                        <div class="jl-gallery">
-                            <a class="" href="<?php echo get_template_directory_uri() ?>/img/dev/demo.jpg" data-sub-html="Titulo de la imagen">
-                                    <img class="img-responsive" src="<?php echo get_template_directory_uri() ?>/img/dev/demo.jpg">
-                            </a>
-                            <a class="" href="<?php echo get_template_directory_uri() ?>/img/dev/demo.jpg" data-sub-html="Titulo de la imagen">
-                                <img class="img-responsive" src="<?php echo get_template_directory_uri() ?>/img/dev/proyecto2-thumbnail.jpg">
-                            </a>
-                            <a class="" href="<?php echo get_template_directory_uri() ?>/img/dev/demo.jpg" data-sub-html="Titulo de la imagen">
-                                <img class="img-responsive" src="<?php echo get_template_directory_uri() ?>/img/dev/proyecto3-thumbnail.jpg">
-                            </a>
-                        </div>
-
+            <?php }  ?>
+            
+            <div class="jl-gallery__title">
+                <?php the_title('<h3>', '</h3>') ?>
+                <div class="jl-gallery__show">
+                    ver galería 
                 </div>
             </div>
+        </div>
+    </div>
+
+<?php }
+
+	endwhile;
+?>
+
+ </div>
 
             <div class="carousel-nav">
                 <button class="cBtn-previous" disabled>
@@ -157,7 +76,5 @@
 
                 </button>
             </div>
-
         </div>
-
 </section>

@@ -23,7 +23,7 @@
 
             <section class="cover-page">
 
-                <div class="cover-page__title z-content wow fadeInUp" data-wow-delay="1s">
+                <div class="cover-page__title z-content">
                     <h1>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 151.09 53.6"><defs>
                         </defs>
