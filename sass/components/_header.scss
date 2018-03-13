@@ -30,14 +30,20 @@
         svg {
             margin: auto;
             width: 24px;
+            @media (min-width: map-get($breakpoints, 'm')) {
+                width: 28px;    
+            }
         }
     }
 
     &__contact {
         text-align: center;
-        font-size: 0.8em;
+        font-size: 12px;
+        font-size: 0.8rem;
         padding: $pad-small 0;
-
+        @media (min-width: map-get($breakpoints, 'm')) {
+            font-size: .95rem;
+        }
         .item-contact {
             margin: 0 .3rem;
             @media (min-width: map-get($breakpoints, 's')) {
@@ -128,12 +134,15 @@
     color: $c-white;
     padding: $pad-small;
     position: absolute;
-    bottom: 0;
+
     padding: 8vw;
     right: 0;
     width: 83.4%;
+    top: 50vh;
 
     @media (min-width: map-get($breakpoints, 's')) {
+        top: auto;
+        bottom: 0;
         bottom: 10vh;
         display: flex;
         align-items: flex-end;
@@ -234,6 +243,7 @@ $t: 15s;
         height: 100vh;
         overflow: hidden;
         position: relative;
+        background-color: #cbc9c5;
 
         &::after {
             display: block;

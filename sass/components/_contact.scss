@@ -208,6 +208,7 @@ div.wpcf7-response-output::after {
     position: relative;
     h2 {
         padding-bottom: .2rem;
+        pointer-events: none;
     }
 }
 .contact-form p:first-of-type {
@@ -217,4 +218,8 @@ div.wpcf7-response-output::after {
 .contact-form a {
     color: #fff;
     text-decoration: none;
+}
+
+div.wpcf7 .ajax-loader {
+    display: none;
 }

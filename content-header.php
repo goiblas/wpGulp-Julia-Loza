@@ -30,7 +30,7 @@
                         <title>Julia Loza - Estudio de decoraión</title>
                         <g id="Capa_2" data-name="Capa 2"><g id="Capa_1-2" data-name="Capa 1"><rect class="logo" x="32.08" width="10.65" height="53.6"/><rect class="logo" x="92.57" width="10.66" height="53.6"/><rect class="logo" x="106.77" y="22.79" width="10.71" height="30.81"/><rect class="logo" x="106.77" width="10.71" height="18.03"/><polygon class="logo" points="10.71 22.8 0 22.8 17.77 53.57 28.47 53.57 10.71 22.8"/><polygon class="logo" points="57.02 22.8 46.31 22.8 64.07 53.57 74.78 53.57 57.02 22.8"/><polygon class="logo" points="71.25 22.8 60.54 22.8 78.31 53.57 89.02 53.57 71.25 22.8"/><rect class="logo" x="140.43" y="22.79" width="10.66" height="30.81"/><path class="logo" d="M139.72-778.8c0,10.21,6,15.4,6,15.4H134.93s-6-5.19-6-15.4,6-15.48,6-15.48h10.75S139.72-789,139.72-778.8Z" transform="translate(-8 817)"/></g></g></svg>
                     </h1>
-                    <h2>Estudio de decoración <span class="sep-subtitle">·</span> Dise&ntilde;o de interiores</h2>
+                    <h2>Estudio de Decoración <span class="sep-subtitle">·</span> Dise&ntilde;o</h2>
                 </div>
 
                 <input class="animationCheck" id="check" type="checkbox" name="animation">

@@ -1,8 +1,6 @@
 <?php
 get_header(); ?>
 
-<?php // preload ?>
-
 <div id="preloader" class="anima-entry preload-wrap">
    <div class="logo-preload">
 		<video autoplay="autoplay" loop>
@@ -44,4 +42,4 @@ get_header(); ?>
 
 	endwhile;
 	
- //get_footer(); ?>
+ get_footer(); ?>

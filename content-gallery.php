@@ -34,7 +34,7 @@
             </a>
 
             <?php }  ?>
-            
+                </div>
             <div class="jl-gallery__title">
                 <?php the_title('<h3>', '</h3>') ?>
                 <div class="jl-gallery__show">
@@ -42,7 +42,7 @@
                 </div>
             </div>
         </div>
-    </div>
+
 
 <?php }
 

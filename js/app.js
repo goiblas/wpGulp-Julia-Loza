@@ -4,14 +4,11 @@ $(window).ready(function () {
 
     setTimeout(function() {
 
-        // add class run-initial
         $('body').addClass('run-initial');
 
-        // delay & fadeOut
         $('#preloader').fadeOut('slow');
         $('body').css({ 'overflow-y': 'visible' });
 
-        // delary & remove class run-initial
     }, 1000);
 
     if (typeof WOW == 'function') {
@@ -103,8 +100,9 @@ $(document).ready(function () {
 
     // google maps
 var map, marker;
+
 var coords = { lat: 42.460302719808254, lng: -2.4496596925903313 };
-var coordsMap = { lat: 42.4563046, lng: -2.4554841 };
+var coordsMap = { lat: 42.4617751, lng: -2.4497879 };
 var linkGoogleMaps = 'https://www.google.es/maps/place/Julia+Loza+Sainz+Estudio+de+decoraci%C3%B3n+dise%C3%B1o/@42.4623187,-2.4495087,15z/data=!4m2!3m1!1s0x0:0x5cd4eb0cd3f7036d?sa=X&ved=0ahUKEwjDlp71wPfXAhXM1RoKHY0dCzAQ_BIIeTAP';
 
 function initMap() {
@@ -115,7 +113,7 @@ function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: currentCoordsMap,
         zoom: 16,
-        gestureHandling: 'greedy',
+        gestureHandling: 'cooperative',
         scrollwheel: false,
         disableDefaultUI: true,
         styles: [

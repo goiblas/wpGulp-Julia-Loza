@@ -29,7 +29,7 @@
         &__wrap { display: flex; }
         &__content { width: 50%; }
         &__image { 
-            padding: 0;
+            padding: 0 0 0 7%;
             width: 50%;
             order: 1;
         }
@@ -38,8 +38,7 @@
 
 
     &__lighted {
-        padding-top: 1.5rem;
-        font-size: 1.1875rem;
+        padding-top: 1.8rem;
 
         &::before {
             content: "";
@@ -54,7 +53,7 @@
             z-index: map-get($z-index,'bg');
 
             @media (min-width: map-get($breakpoints, 'xl')) {
-                transform: skewY(-3deg) translateY(-1rem);
+                transform: skewY(-3deg) translateY(-2rem);
             }
         }
     }
@@ -62,10 +61,11 @@
      
     &__mark {
         text-align: right;
+        padding: 20px 0;
 
         img {
             opacity: .8;
-            width: 118px;
+            width: 144px;
             height: auto;
             max-width: 50vw;
         }

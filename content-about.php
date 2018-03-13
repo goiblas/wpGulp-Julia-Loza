@@ -13,6 +13,7 @@
         }
     }
 
+
     $content = get_the_content();
     $content = preg_replace("/<img[^>]+\>/i", " ", $content);          
     $content = apply_filters('the_content', $content);
@@ -32,7 +33,7 @@
                 </div>
                 <div class="about__lighted">
                     <div class="z-content  wow fadeInUp" data-wow-delay="0.3s">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus necessitatibus</p>
+                        <p>Miembro de Consego Europeo de Arquitectos de Interior (ECIA) y de la Federación Internacional de Arquitectos de Interior (IFI)</p>
                         <div class="about__mark">
                             <img src="<?php echo get_template_directory_uri() ?>/img/colegiada_LR_065.svg" alt="Colegiada LR 065">
                         </div>
